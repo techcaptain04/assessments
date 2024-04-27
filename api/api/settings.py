@@ -43,6 +43,12 @@ INSTALLED_APPS = [
     'blog'
 ]
 
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'api.handler.error_handler'
+}
+
+APPEND_SLASH = False
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

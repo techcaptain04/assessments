@@ -1,0 +1,5 @@
+[MASTER]
+disable=C0114,C0115,C0116
+
+[TYPECHECK]
+generated-members=REQUEST,acl_users,aq_parent,objects,DoesNotExist,_meta,id,[a-zA-Z]+_set
