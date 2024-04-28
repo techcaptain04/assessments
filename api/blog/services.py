@@ -1,4 +1,5 @@
 
+import nh3
 from .models import Article
 
 
@@ -8,12 +9,15 @@ def get_articles():
 
 def get_article(pk):
     try:
-        return Article.objects.get(id=pk)
+        article = Article.objects.get(id=pk)
+        article.content = nh3.clean(article.content)
+        return article
     except Article.DoesNotExist:
         return None
 
 
-def create_article(data):
+def create_article(data: Article):
+    data.content = nh3.clean(data.content)
     return Article.objects.create(**data)
 
 

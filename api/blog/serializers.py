@@ -5,7 +5,10 @@ from .models import Article
 class ArticleSerializer(serializers.Serializer):
     id = serializers.UUIDField(read_only=True)
     title = serializers.CharField()
+    headline = serializers.CharField()
     content = serializers.CharField()
+    created_at = serializers.DateTimeField(read_only=True)
+    updated_at = serializers.DateTimeField(read_only=True)
 
     def create(self, validated_data):
         return Article.objects.create(**validated_data)

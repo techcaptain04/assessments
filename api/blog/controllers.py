@@ -66,7 +66,7 @@ class BlogController(APIView):
                 status=status.HTTP_404_NOT_FOUND
             )
 
-        article = services.delete_article(article)
+        services.delete_article(article)
         return Response(
             {
                 'message': 'Article deleted',
